@@ -9,11 +9,13 @@ public class Quiz : MonoBehaviour
     [SerializeField] TextMeshProUGUI questionText;
     [SerializeField] QuestionSO question;
     [SerializeField] GameObject[] answerButtons;
-    int correctAsnwer;
     [SerializeField] Sprite defaultAnswerSprite;
     [SerializeField] Sprite correctAnswerSprite;
+
+    int correctAsnwer;
     Image buttonImage;
     Button button;
+    Timer timer;
 
     void Start()
     {
@@ -29,6 +31,7 @@ public class Quiz : MonoBehaviour
 
     public void GetNextQuestion()
     {
+        
         ButtonState(true);
         SetDefultSprite();
         DesplayQuestion();
@@ -54,12 +57,18 @@ public class Quiz : MonoBehaviour
 
 
         }
-            ButtonState(false);
+
+        ButtonState(false);
+        
+
+
     }
 
     private void DesplayQuestion()
     {
+        
         questionText.text = question.GetQuestion();
+
 
 
         for (int i = 0; i < answerButtons.Length; i++)

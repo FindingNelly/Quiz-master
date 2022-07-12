@@ -13,3 +13,9 @@ MonoBehaviour:
   m_Name: Question 2
   m_EditorClassIdentifier: 
   EnterQuestionHere: What is nellys nickname
+  answers:
+  - Cutee
+  - Booben
+  - Cicken
+  - Silly
+  correctAnswer: 1
