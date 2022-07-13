@@ -7,6 +7,7 @@ public class Timer : MonoBehaviour
     [SerializeField] float timeToCompleteQuestion = 30;
     [SerializeField] float timeToNextQuestion = 10;
     float timerTime;
+    public float fillFraction;
     [SerializeField] public bool isAnswringQuestion = false;
 
     private void Start()
@@ -35,6 +36,16 @@ public class Timer : MonoBehaviour
             isAnswringQuestion = true;
         }
         Debug.Log(timerTime);
+
+        if (isAnswringQuestion)
+        {
+            fillFraction=timerTime/timeToCompleteQuestion;
+        }
+        else if (!isAnswringQuestion)
+        {
+            fillFraction = timerTime / timeToNextQuestion;
+        }
+        Debug.Log(fillFraction);
     }
     public void LoadNextQuestion()
     {

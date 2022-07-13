@@ -11,6 +11,7 @@ public class Quiz : MonoBehaviour
     [SerializeField] GameObject[] answerButtons;
     [SerializeField] Sprite defaultAnswerSprite;
     [SerializeField] Sprite correctAnswerSprite;
+    [SerializeField] Image timerImage;
 
     int correctAsnwer;
     Image buttonImage;
@@ -19,6 +20,7 @@ public class Quiz : MonoBehaviour
 
     void Start()
     {
+        timer=FindObjectOfType<Timer>();
         GetNextQuestion();
     }
 
@@ -26,7 +28,7 @@ public class Quiz : MonoBehaviour
 
     void Update()
     {
-               
+        timerImage.fillAmount = timer.fillFraction;
     }
 
     public void GetNextQuestion()
